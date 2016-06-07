@@ -1,6 +1,6 @@
 # Koa 2 React Boilerplate
 
-Isomorphic boilderplate using React and KoaJS v2.
+Isomorphic boilerplate using React and KoaJS v2.
 
 ## Quickstart
 
