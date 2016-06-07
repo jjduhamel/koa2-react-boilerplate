@@ -1,4 +1,4 @@
-# React Boilerplate
+# Koa 2 React Boilerplate
 
 Isomorphic boilderplate using React and KoaJS v2.
 
