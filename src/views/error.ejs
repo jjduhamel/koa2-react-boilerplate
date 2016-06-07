@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./styles %>
+    <% include ./scripts %>
+  </head>
+  <body>
+    <h1>Error</h1>
+    <div id='content'></div>
+    <script>
+      document.getElementById('content').innerHTML = '<%= error %>';
+    </script>
+  </body>
+</html>

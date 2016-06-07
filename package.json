@@ -1,0 +1,33 @@
+{
+  "name": "koa2-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate code for React projects.",
+  "main": "bin/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjduhamel/koa2-boilerplate.git"
+  },
+  "author": "John Duhamel <john.duhamel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jjduhamel/koa2-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jjduhamel/koa2-boilerplate#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.5.0",
+    "ejs": "^2.4.2",
+    "koa": "^2.0.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.0.1",
+    "koa-static": "^3.0.0",
+    "koa-views": "^5.0.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0"
+  }
+}
