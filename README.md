@@ -1,6 +1,6 @@
-# Koa 2 Boilerplate
+# Koa 2 React Boilerplate
 
-Boilerplate code for KoaJS v2 projects.
+Boilerplate code for projects using React and KoaJS v2.
 
 ## Quickstart
 

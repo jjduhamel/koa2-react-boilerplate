@@ -2,8 +2,9 @@ import koaRouter from 'koa-router';
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import ReactRouter, { match, RouterContext } from 'react-router';
 
-import Client from './client';
+import { Client, Routes } from './client';
 
 const router = module.exports = new koaRouter();
 
@@ -11,20 +12,36 @@ router.use(async (ctx, next) => {
   try {
     await next();
   } catch (err) {
-    ctx.state = err.status || 500;
-    await ctx.render('error.ejs', { error: err.message });
+    const status = ctx.status;
+    await ctx.render('error.ejs', { message: err.message });
+    ctx.status = status;
   }
 });
 
-router.use(async (ctx, next) => {
+router.get(/.*/, async (ctx, next) => {
   await next();
+
+  let html = '';
+
+  match({
+    routes: Routes, location: ctx.originalUrl
+  }, (err, redirect, props) => {
+    if (err) {
+      throw err;
+    } else if (redirect) {
+      ctx.redirect(redirect.pathname+redirect.search);
+    } else if (props) {
+      html = renderToString(<RouterContext { ...props } />);
+    } else {
+      ctx.throw(404);
+    }
+  });
+
   await ctx.render('index.ejs', {
-    app: renderToString(<Client />),
+    app: html,
     data: ctx.body
   });
 });
-
-router.get('/');
 
 router.all('/ping', async ctx => {
   ctx.body = 'pong';
